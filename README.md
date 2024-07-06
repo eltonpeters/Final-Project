@@ -22,5 +22,5 @@ The Dice Game is a simple web-based game where the player competes against the c
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/dice-game.git
+   git clone https://github.com/eltonpeters/Final-Project.git
    cd dice-game
