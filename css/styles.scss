@@ -1,0 +1,374 @@
+/**
+ *  Student Name:  Elton Peters
+ *  Student ID:    A01367028 
+ */
+
+// Variables SASS
+$primary-color: #333;
+$secondary-color: white;
+$font-family: 'Source Code Pro', monospace;
+
+// Mixin SASS
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+       -o-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Styles
+html {
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-size: 1em;
+  color: $primary-color;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 900px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  max-height: 35vh;
+  align-self: center;
+}
+
+main li {
+  padding-top: 5px;
+}
+
+p {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+  line-height: 1.4em;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  padding: 20px 0px 10px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+button {
+  padding: 4px;
+  margin: 10px 4px 0px 4px;
+  min-width: 80px;
+  @include border-radius(10px);
+  background-color: $secondary-color;
+  color: #0033cc;
+  font-weight: bold;
+  outline: none;
+  box-shadow: none;
+}
+
+button:hover {
+  color: $secondary-color;
+  background-color: #0033cc;
+  cursor: pointer;
+}
+
+button:active {
+  color: $secondary-color;
+  background-color: #8ba8ff;
+  cursor: pointer;
+}
+
+.fade-in-image {
+  animation: fadeIn 1s forwards;
+}
+
+.fade-out-image {
+  animation: fadeOut 1s forwards;
+}
+
+.shake-image {
+  animation: shake 0.5s;
+}
+
+#game-container {
+  margin-top: 20px;
+  padding: 0px;
+  border: 2px solid $primary-color;
+  @include border-radius(30px);
+  background-color: $secondary-color;
+  position: relative;
+  min-width: 800px;
+  min-height: 550px;
+}
+
+#welcome {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $secondary-color;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  padding: 20px;
+  @include border-radius(30px);
+  box-shadow: 0 0 10px rgb(24, 52, 209);
+}
+
+#welcome-message {
+  font-size: 3em;
+  justify-self: center;
+  padding: 10px 0 10px 0;
+}
+
+#rules {
+  padding: 10px 5px 10px 5px;
+}
+
+#begin-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 1.7em;
+  padding-bottom: 10px;
+}
+
+#active-game-container {
+  position: absolute;
+  @include border-radius(30px);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  padding: 20px;
+  display: none;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-areas: "player round computer" "player-dice play computer-dice" "summary summary summary";
+  grid-template-rows: 25% 40%;
+  row-gap: 10px;
+  column-gap: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.9em;
+  color: $secondary-color;
+  background-color: $primary-color;
+  box-shadow: 0 0 10px rgb(24, 52, 209);
+}
+
+#player-title {
+  border: 3px solid $secondary-color;
+  grid-area: player;
+}
+
+#round-tracker {
+  grid-area: round;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  font-size: 1.3em;
+  font-family: "Press Start 2P", cursive;
+}
+
+#computer-title {
+  grid-area: computer;
+  border: 3px solid $secondary-color;
+}
+
+#player-title, #computer-title {
+  padding: 10px;
+}
+
+#player-image-container {
+  grid-area: player-dice;
+}
+
+#computer-image-container {
+  grid-area: computer-dice;
+}
+
+#game-summary {
+  grid-area: summary;
+  padding: 10px;
+  border: 3px solid $secondary-color;
+}
+
+#play-btn {
+  grid-area: play;
+  justify-self: center;
+  align-self: center;
+  min-width: 50%;
+  min-height: 30%;
+  color: $primary-color;
+  background-color: $secondary-color;
+  border: 3px solid $secondary-color;
+  font-family: "Press Start 2P", cursive;
+  @include border-radius(10px);
+  line-height: 1.7em;
+}
+
+#play-btn:hover {
+  color: $secondary-color;
+  background-color: $primary-color;
+}
+
+#player-image-container, #computer-image-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#mute {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  border: 3px solid $secondary-color;
+  @include border-radius(5px);
+  background-color: $secondary-color;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@media (min-width: 550px) {
+  main img {
+    max-width: 60%;
+    height: auto;
+    max-height: 35vh;
+    align-self: center;
+  }
+}
+
+@media (min-width: 800px) {
+  nav li a {
+    padding-right: 10px;
+    border-right: 1px solid $secondary-color;
+    margin-right: 10px;
+    margin-left: 10px;
+    @include border-radius(8px);
+    text-align: center;
+    background: rgba(0, 0, 175, 0.918);
+  }
+  nav li a:link, nav li a:visited {
+    background: rgba(48, 48, 255, 0.863);
+  }
+  nav li a:hover {
+    background: rgba(84, 84, 252, 0.863);
+  }
+  nav li a:active {
+    color: rgba(48, 48, 255, 0.863);
+    background: $secondary-color;
+  }
+
+  .nav-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    text-align: left;
+    max-height: 100vh;
+  }
+}
+
+@media print {
+  a[href^=http]:after {
+    content: " URL: (" attr(href) ") ";
+  }
+  header, nav, aside, footer {
+    display: none;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  p {
+    page-break-inside: avoid;
+  }
+  section ~ section {
+    page-break-before: always;
+  }
+}

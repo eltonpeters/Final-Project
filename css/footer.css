@@ -1,0 +1,20 @@
+/**
+ *  Student Name:  Elton Peters
+ *  Student ID:    A01367028 
+ */
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed, absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+
+    p {
+        margin: 0;
+    }
+}
