@@ -3,84 +3,76 @@
  Student ID:    A01367028 
  -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet">
-    <title>Final Project</title>
-
-    <link type="text/css" rel="stylesheet" href="./css/main.css" />
-
-    <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./icons/dice.png">
-  
-    <script src="./js/jQuery3.7.1.js"></script>
-    <script src="./js/script.js" defer="defer"></script>
-</head>
-
-<body>
-    <!-- Header section -->
-    <header>
-        <h1>DICE GAME</h1>
-    </header>
-
-    <main>
-        <div id="game-container">
-            <div id="welcome">
-                <p id="welcome-message">WELCOME TO DICE!</p>
-                <div id="rules">
-                    <h3>The Rules for dice are:</h3>
-                    <ol>
-                        <li>There will be three rounds</li>
-                        <li>Each round, you and the computer will face off by rolling two dice each</li>
-                        <li>Each round you will earn a score based on your dice roll:
-                            <ul>
-                                <li>If either of your dice are a 1, your score for that round is 0</li>
-                                <li>If you roll two of the same number (except 1), your score for that round is twice the sum of the dice values</li>
-                                <li>Otherwise, your score for that round is the sum of the two dice values</li>
-                            </ul>
-                        </li>
-                        <li>After three rounds, the player with the highest total score wins!</li>
-                    </ol>
-                </div>
-                <button id="begin-btn">Start</button>
-            </div>
-            
-            <div id="active-game-container">
-                <div id="player-title">
-                    <p>You</p>
-                    <div id="player-stats"></div>
-                </div>
-                <div id="round-tracker">
-                    <p>Round: 1</p>
-                </div>
-                <div id="computer-title">
-                    <p>Computer</p>
-                    <div id="computer-stats"></div>
-                </div>
-                <div id="player-image-container">
-                    <img src="./images/dice.png" alt="dice cup">
-                </div>
-                <button id="play-btn">Click to Roll</button>
-                <div id="computer-image-container">
-                    <img src="./images/dice.png" alt="dice cup">
-                </div>
-                <div id="game-summary">
-                    <p>Get ready!</p>
-                </div>
-                <input type="image" id="mute" src="./images/unmuted_icon.svg" alt="mute-toggle">
-                <audio id="background-music" src="./audio/background_music.mp3"></audio>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 - Elton Peters | <strong>Student ID:</strong> A01367028</p>
-    </footer>
-</body>
-</html>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet">
+     <title>Final Project</title>
+     <link type="text/css" rel="stylesheet" href="./css/main.css">
+     <link rel="icon" type="image/png" sizes="16x16" href="./icons/dice.png">
+     <script src="./js/jQuery3.7.1.js"></script>
+     <script src="./js/script.js" defer="defer"></script>
+ </head>
+ <body>
+     <header>
+         <h1>DICE GAME</h1>
+     </header>
+     <main>
+         <div id="game-container">
+             <div id="welcome">
+                 <p id="welcome-message">WELCOME TO DICE!</p>
+                 <div id="rules">
+                     <h3>The Rules for dice are:</h3>
+                     <ol>
+                         <li>There will be three rounds</li>
+                         <li>Each round, you and the computer will face off by rolling two dice each</li>
+                         <li>Each round you will earn a score based on your dice roll:
+                             <ul>
+                                 <li>If either of your dice are a 1, your score for that round is 0</li>
+                                 <li>If you roll two of the same number (except 1), your score for that round is twice the sum of the dice values</li>
+                                 <li>Otherwise, your score for that round is the sum of the two dice values</li>
+                             </ul>
+                         </li>
+                         <li>After three rounds, the player with the highest total score wins!</li>
+                     </ol>
+                 </div>
+                 <button id="begin-btn">Start</button>
+             </div>
+             <div id="active-game-container">
+                 <div id="player-title">
+                     <p>You</p>
+                     <div id="player-stats"></div>
+                 </div>
+                 <div id="round-tracker">
+                     <p>Round: 1</p>
+                 </div>
+                 <div id="computer-title">
+                     <p>Computer</p>
+                     <div id="computer-stats"></div>
+                 </div>
+                 <div id="player-image-container">
+                     <img id="player-img" src="./images/dice.png" alt="dice cup">
+                 </div>
+                 <button id="play-btn">Click to Roll</button>
+                 <div id="computer-image-container">
+                     <img id="computer-img" src="./images/dice.png" alt="dice cup">
+                 </div>
+                 <div id="game-summary">
+                     <p>Get ready!</p>
+                 </div>
+                 <input type="image" id="mute" src="./images/unmuted_icon.svg" alt="mute-toggle">
+                 <audio id="background-music" src="./audio/background_music.mp3"></audio>
+             </div>
+         </div>
+     </main>
+     <footer>
+         <p>&copy; 2023 - Elton Peters | <strong>Student ID:</strong> A01367028</p>
+     </footer>
+ </body>
+ </html>
+ 
